@@ -25,8 +25,9 @@ namespace Project_theater
         private void My_Account_Load(object sender, EventArgs e)
         {
             Fields_fill();
+            personal_info_panel1.account = this;
             personal_info_panel1.userid = user.ID;
-            //personal_info_panel1.f.Changed += Fields_fill;
+            panel5.Visible = false;
         }
 
         public async void Fields_fill()
@@ -42,6 +43,8 @@ namespace Project_theater
                     metroLabel1.Text = "Личный кабинет пользователя\n" + reader.GetValue(1).ToString();
                     personal_info_panel1.label3.Text = reader.GetValue(1).ToString();
                     personal_info_panel1.label4.Text = reader.GetValue(2).ToString();
+                    personal_info_panel1.textBox1.Text = reader.GetValue(1).ToString();
+                    personal_info_panel1.textBox2.Text = reader.GetValue(2).ToString();
                 }
             }
         }
@@ -61,6 +64,7 @@ namespace Project_theater
         {
             panel5.Height = b.Height;
             panel5.Top = b.Top;
+            panel5.Visible = true;
             panel5.BringToFront();
         }
 

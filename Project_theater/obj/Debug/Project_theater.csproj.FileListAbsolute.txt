@@ -26,7 +26,6 @@ C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Deb
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Debug\Project_theater.exe.config
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Debug\Project_theater.exe
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Debug\Project_theater.pdb
-C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csprojAssemblyReference.cache
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Authorization.resources
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Afisha.resources
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Change_info.resources
@@ -41,3 +40,5 @@ C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Deb
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csproj.CopyComplete
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.exe
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.pdb
+C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csprojAssemblyReference.cache
+C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Me_account_firsttext_panel.resources

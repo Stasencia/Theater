@@ -95,6 +95,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Me_account_firsttext_panel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Me_account_firsttext_panel.Designer.cs">
+      <DependentUpon>Me_account_firsttext_panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="My_Account.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Me_account_firsttext_panel.resx">
+      <DependentUpon>Me_account_firsttext_panel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My_Account.resx">
       <DependentUpon>My_Account.cs</DependentUpon>
