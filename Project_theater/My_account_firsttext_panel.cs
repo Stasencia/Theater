@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Project_theater
 {
-    public partial class Me_account_firsttext_panel : UserControl
+    public partial class My_account_firsttext_panel : UserControl
     {
-        public Me_account_firsttext_panel()
+        public My_account_firsttext_panel()
         {
             InitializeComponent();
         }

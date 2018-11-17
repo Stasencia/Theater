@@ -39,7 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.personal_info_panel1 = new Project_theater.Personal_info_panel();
             this.tickets_panel1 = new Project_theater.Tickets_panel();
-            this.me_account_firsttext_panel1 = new Project_theater.Me_account_firsttext_panel();
+            this.me_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -214,6 +214,6 @@
         private System.Windows.Forms.Button button3;
         private Personal_info_panel personal_info_panel1;
         private Tickets_panel tickets_panel1;
-        private Me_account_firsttext_panel me_account_firsttext_panel1;
+        private My_account_firsttext_panel me_account_firsttext_panel1;
     }
 }

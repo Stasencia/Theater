@@ -1,6 +1,6 @@
 ﻿namespace Project_theater
 {
-    partial class Me_account_firsttext_panel
+    partial class My_account_firsttext_panel
     {
         /// <summary> 
         /// Обязательная переменная конструктора.
