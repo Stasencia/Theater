@@ -9,5 +9,6 @@ namespace Project_theater
     class DB_connection
     {
         public static string connectionString;
+        public static string current_directory;
     }
 }

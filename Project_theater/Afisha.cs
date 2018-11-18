@@ -13,51 +13,43 @@ namespace Project_theater
 {
     public partial class Afisha : MetroForm
     {
+        Performance_list f;
         public Afisha()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Performance_Load(object sender, EventArgs e)
         {
-            Button[] b = new Button[35];
-            for (int i = 0; i < 35; i++)
-            {
-                b[i] = new Button();
-                b[i].Size = new Size(80, 80);
-                b[i].Location = new Point(129 + (79 * (i%7)), 138 + (79 * (int)Math.Floor(i/7.0)));
-                b[i].Text = (i + 1).ToString();
-                b[i].FlatStyle = FlatStyle.Flat;
-                b[i].TextAlign = ContentAlignment.TopLeft;
-                b[i].BackgroundImageLayout = ImageLayout.Stretch;
-                b[i].MouseEnter += new EventHandler(button_MouseEnter);
-                b[i].MouseLeave += new EventHandler(button_MouseLeave);
-                Controls.Add(b[i]);
-            }
+            f = new Performance_list();
+            f.MdiParent = this;
+            f.Top = metroPanel1.Bottom;
+            f.Show();
         }
 
-        private void button_MouseLeave(object sender, EventArgs e)
-        {
-            Button p = (Button)sender;
-            p.Height = 80;
-            p.Width = 80;
-            p.Location = new Point(p.Location.X + 10, p.Location.Y + 10);
-            p.BackgroundImage = null;
-        }
-
-        private void button_MouseEnter(object sender, EventArgs e)
-        {
-            Button p = (Button)sender;
-            p.Height = 100;
-            p.Width = 100;
-            p.Location = new Point(p.Location.X - 10, p.Location.Y - 10);
-            p.BackgroundImage = new Bitmap(@"C:\Users\Stasia\Desktop\Project_theater\Resources\111477-theatre.png");
-            p.BringToFront();
-        }
-
-        private void Afisha_FormClosing(object sender, FormClosingEventArgs e)
+        private void Performance_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            f.Refresh(11);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            f.Refresh(12);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            f.Refresh(1);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            f.Refresh(2);
         }
     }
 }

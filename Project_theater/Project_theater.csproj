@@ -76,11 +76,11 @@
     <Compile Include="Authorization.Designer.cs">
       <DependentUpon>Authorization.cs</DependentUpon>
     </Compile>
-    <Compile Include="Afisha.cs">
+    <Compile Include="Performance.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Afisha.Designer.cs">
-      <DependentUpon>Afisha.cs</DependentUpon>
+    <Compile Include="Performance.Designer.cs">
+      <DependentUpon>Performance.cs</DependentUpon>
     </Compile>
     <Compile Include="Change_info.cs">
       <SubType>Form</SubType>
@@ -106,6 +106,18 @@
     </Compile>
     <Compile Include="My_Account.Designer.cs">
       <DependentUpon>My_Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Afisha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Afisha.Designer.cs">
+      <DependentUpon>Afisha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Performance_list.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Performance_list.Designer.cs">
+      <DependentUpon>Performance_list.cs</DependentUpon>
     </Compile>
     <Compile Include="Personal_info_panel.cs">
       <SubType>UserControl</SubType>
@@ -136,8 +148,8 @@
     <EmbeddedResource Include="Authorization.resx">
       <DependentUpon>Authorization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Afisha.resx">
-      <DependentUpon>Afisha.cs</DependentUpon>
+    <EmbeddedResource Include="Performance.resx">
+      <DependentUpon>Performance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Change_info.resx">
       <DependentUpon>Change_info.cs</DependentUpon>
@@ -150,6 +162,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My_Account.resx">
       <DependentUpon>My_Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Afisha.resx">
+      <DependentUpon>Afisha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Performance_list.resx">
+      <DependentUpon>Performance_list.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Personal_info_panel.resx">
       <DependentUpon>Personal_info_panel.cs</DependentUpon>
