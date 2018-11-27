@@ -139,8 +139,8 @@
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.TransparencyKey = System.Drawing.Color.Empty;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Performance_FormClosing);
-            this.Load += new System.EventHandler(this.Performance_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Afisha_FormClosing);
+            this.Load += new System.EventHandler(this.Afisha_Load);
             this.metroPanel1.ResumeLayout(false);
             this.metroPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

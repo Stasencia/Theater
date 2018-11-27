@@ -19,15 +19,16 @@ namespace Project_theater
             InitializeComponent();
         }
 
-        private void Performance_Load(object sender, EventArgs e)
+        private void Afisha_Load(object sender, EventArgs e)
         {
             f = new Performance_list();
             f.MdiParent = this;
             f.Top = metroPanel1.Bottom;
             f.Show();
+            button1_Click(this, new EventArgs());
         }
 
-        private void Performance_FormClosing(object sender, FormClosingEventArgs e)
+        private void Afisha_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

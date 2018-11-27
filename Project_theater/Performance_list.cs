@@ -19,16 +19,15 @@ namespace Project_theater
             InitializeComponent();
         }
 
-        private void Performance_list_Load(object sender, EventArgs e)
+        private void button_Click(object sender, EventArgs e)
         {
-            
-            
+            Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag));
+            f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Performance_Create(int perf_id)
         {
             
-           
         }
 
         public async void Refresh(int month)
@@ -84,6 +83,10 @@ namespace Project_theater
                         b.Size = new Size(192, 37);
                         b.Location = new Point(297, 308 + i * 360);
                         b.Font = new Font("Century", 12, FontStyle.Bold);
+                        b.Tag = reader.GetValue(0);
+                        b.Click += new System.EventHandler(this.button_Click);
+                        /*Performance_info inf = new Performance_info();
+                        inf.perf_id = int.Parse(reader.GetValue(0).ToString());*/
                         Controls.Add(p);
                         Controls.Add(l1);
                         Controls.Add(l2);

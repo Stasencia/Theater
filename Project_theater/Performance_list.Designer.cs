@@ -49,7 +49,7 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Узнать больше";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            
             // 
             // label9
             // 
@@ -63,7 +63,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(293, 86);
+            this.label7.Location = new System.Drawing.Point(293, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(249, 20);
             this.label7.TabIndex = 20;
@@ -74,9 +74,9 @@
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.Location = new System.Drawing.Point(293, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(319, 56);
+            this.label6.Size = new System.Drawing.Size(114, 25);
             this.label6.TabIndex = 19;
-            this.label6.Text = "Спектакль театра-цирка «7 пальцев» The 7 Fingers, Канада";
+            this.label6.Text = "Пассажири";
             // 
             // panel1
             // 
@@ -91,7 +91,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(294, 106);
+            this.label8.Location = new System.Drawing.Point(294, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(249, 20);
             this.label8.TabIndex = 23;
@@ -115,7 +115,6 @@
             this.Style = MetroFramework.MetroColorStyle.White;
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Performance_list_Load);
             this.ResumeLayout(false);
 
         }
