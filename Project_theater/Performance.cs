@@ -14,11 +14,13 @@ namespace Project_theater
 {
     public partial class Performance : MetroForm
     {
-        int id;
-        public Performance(int perf_id)
+        int perf_id;
+        Afisha a;
+        public Performance(int perf_id, Afisha a)
         {
             InitializeComponent();
-            id = perf_id;
+            this.perf_id = perf_id;
+            this.a = a;
         }
 
         private async void Performance_Load(object sender, EventArgs e)
@@ -27,8 +29,8 @@ namespace Project_theater
             for (int i = 0; i < 35; i++)
             {
                 b[i] = new Button();
-                b[i].Size = new Size(100, 100);
-                b[i].Location = new Point(11 + (99 * (i % 7)), 830 + (99 * (int)Math.Floor(i / 7.0)));
+                b[i].Size = new Size(90, 90);
+                b[i].Location = new Point(75 + (89 * (i % 7)), 830 + (89 * (int)Math.Floor(i / 7.0)));
                 b[i].Text = (i + 1).ToString();
                 b[i].FlatStyle = FlatStyle.Flat;
                 b[i].TextAlign = ContentAlignment.TopLeft;
@@ -46,7 +48,7 @@ namespace Project_theater
             {
                 await connection.OpenAsync();
                 SqlCommand command = new SqlCommand("SELECT * FROM [Afisha] WHERE Id = @Id", connection);
-                command.Parameters.AddWithValue("@Id", id);
+                command.Parameters.AddWithValue("@Id", perf_id);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -63,8 +65,8 @@ namespace Project_theater
         private void button_MouseLeave(object sender, EventArgs e)
         {
             Button p = (Button)sender;
-            p.Height = 100;
-            p.Width = 100;
+            p.Height = 90;
+            p.Width = 90;
             p.Location = new Point(p.Location.X + 10, p.Location.Y + 10);
             p.BackgroundImage = null;
         }
@@ -72,8 +74,8 @@ namespace Project_theater
         private void button_MouseEnter(object sender, EventArgs e)
         {
             Button p = (Button)sender;
-            p.Height = 120;
-            p.Width = 120;
+            p.Height = 110;
+            p.Width = 110;
             p.Location = new Point(p.Location.X - 10, p.Location.Y - 10);
             p.BackgroundImage = new Bitmap(@"C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\Resources\111477-theatre.png");
             p.BringToFront();
@@ -83,12 +85,17 @@ namespace Project_theater
         {
             panel1.Size = new Size(780, 380);
             AutoSize = false;
-            Size = new Size(797, 530);
+            this.Size = new Size(797, 448);
         }
 
         private void Performance_Shown(object sender, EventArgs e)
         {
             VerticalScroll.Value = 0;
+        }
+
+        private void Performance_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            a.Show();
         }
     }
 }

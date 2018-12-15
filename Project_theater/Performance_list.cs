@@ -14,6 +14,7 @@ namespace Project_theater
 {
     public partial class Performance_list : MetroForm
     {
+        public int Month_id { get; set; }
         public Performance_list()
         {
             InitializeComponent();
@@ -21,13 +22,23 @@ namespace Project_theater
 
         private void button_Click(object sender, EventArgs e)
         {
-            Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag));
+            Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag), (Afisha)this.Parent.Parent);
             f.Show();
+            this.Parent.Parent.Hide();
         }
 
-        private void Performance_Create(int perf_id)
+        public void Performance_Create()
         {
-            
+            Controls.Clear();
+            Label l = new Label();
+            l.Font = new Font("Century Gothic", 10, FontStyle.Regular);
+            l.Location = new Point(219, 140);
+            l.ForeColor = Color.Gray;
+            l.Text = "Выберите месяц, пьесы по которому вы хотели бы просмотреть";
+            l.TextAlign = ContentAlignment.MiddleCenter;
+            l.AutoSize = false;
+            l.Size = new Size(313, 56);
+            Controls.Add(l);
         }
 
         public async void Refresh(int month)

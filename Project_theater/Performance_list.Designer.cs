@@ -49,7 +49,6 @@
             this.button1.TabIndex = 22;
             this.button1.Text = "Узнать больше";
             this.button1.UseVisualStyleBackColor = false;
-            
             // 
             // label9
             // 
