@@ -113,6 +113,7 @@
     <Compile Include="Afisha.Designer.cs">
       <DependentUpon>Afisha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Performance_class.cs" />
     <Compile Include="Performance_list.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -8,6 +8,6 @@ namespace Project_theater
 {
     public class User
     {
-        public int ID;
+        public static int ID = 0;
     }
 }

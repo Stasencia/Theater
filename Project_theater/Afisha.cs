@@ -19,10 +19,12 @@ namespace Project_theater
 
     public partial class Afisha : MetroForm
     {
+        MainForm mainForm;
         Performance_list f;
-        public Afisha()
+        public Afisha(MainForm main)
         {
             InitializeComponent();
+            mainForm = main;
         }
 
         private void Afisha_Load(object sender, EventArgs e)
@@ -69,7 +71,7 @@ namespace Project_theater
 
         private void Afisha_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            mainForm.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

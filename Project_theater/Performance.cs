@@ -1,4 +1,5 @@
-﻿using MetroFramework.Forms;
+﻿using MetroFramework;
+using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace Project_theater
     public partial class Performance : MetroForm
     {
         public int Month_id { get; set; }
-        int perf_id;
+        int perf_id, perf_info_id;
         Afisha a;
         public Performance(int perf_id, Afisha a, int Month_id)
         {
@@ -38,7 +39,7 @@ namespace Project_theater
                 Controls["b" + (i + 1)].Text = d.Day.ToString();
                 Controls["b" + (i + 1)].Enabled = false;
                 Controls["b" + (i + 1)].BackgroundImage = null;
-                Controls["b" + (i + 1)].Tag = d.Month + ";" + d.Year;
+                Controls["b" + (i + 1)].Tag = d.Year + "-" + d.Month + "-" + d.Day;
                 d = d.AddDays(1);
             }
             using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
@@ -55,7 +56,8 @@ namespace Project_theater
                     {
                         for (int i = 0; i < 42; i++)
                         {
-                            if (Controls["b" + (i + 1)].Text == reader.GetValue(2).ToString() && (Convert.ToInt32(Controls["b" + (i + 1)].Text) >= DateTime.Now.Day || Convert.ToInt32(Controls["b" + (i + 1)].Tag.ToString().Split(';')[1]) > DateTime.Now.Year) && Controls["b" + (i + 1)].Tag.ToString().StartsWith(words[0]))
+                            string[] dateparts = Controls["b" + (i + 1)].Tag.ToString().Split('-');
+                            if (dateparts[2] == reader.GetValue(2).ToString() && (Convert.ToInt32(dateparts[2]) >= DateTime.Now.Day || Convert.ToInt32(dateparts[0]) > DateTime.Now.Year) && dateparts[1] == (words[0]))
                             {
                                 string s = DB_connection.current_directory + "images_afisha\\" + reader.GetValue(3).ToString();
                                 Controls["b" + (i + 1)].Enabled = true;
@@ -154,6 +156,10 @@ namespace Project_theater
             p.Height = 90;
             p.Width = 90;
             p.Location = new Point(p.Location.X + 10, p.Location.Y + 10);
+            p.Text = ((Button)sender).Tag.ToString().Split('-')[2];
+            p.Font = new Font("Century Gothic", 9, FontStyle.Regular);
+            p.ForeColor = Color.Black;
+            p.TextAlign = ContentAlignment.TopLeft;
         }
 
         private async void button_MouseEnter(object sender, EventArgs e)
@@ -172,6 +178,23 @@ namespace Project_theater
                 {
                     string s = DB_connection.current_directory + "images_afisha\\" + reader.GetValue(11).ToString();
                     p.BackgroundImage = new Bitmap(@s);
+                }
+            }
+            string date = ((Button)sender).Tag.ToString();
+            using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
+            {
+                await connection.OpenAsync();
+                SqlCommand command = new SqlCommand("SELECT Time, Id FROM Afisha_dates WHERE Id_performance = @Id AND Date = @date", connection);
+                command.Parameters.AddWithValue("@Id", perf_id);
+                command.Parameters.AddWithValue("@date", date);
+                SqlDataReader reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    p.Text = reader.GetValue(0).ToString();
+                    p.Font = new Font("Century Gothic", 11, FontStyle.Bold);
+                    p.ForeColor = Color.White;
+                    p.TextAlign = ContentAlignment.BottomLeft;
+                    perf_info_id = Convert.ToInt32(reader.GetValue(1));
                 }
             }
             p.BringToFront();
@@ -194,9 +217,16 @@ namespace Project_theater
 
         private void Day_pushed(object sender, EventArgs e)
         {
-            Ticket_purchase t = new Ticket_purchase();
-            t.Show();
-            this.Hide();
+          /*  if (User.ID == 0) 
+            {
+                MetroMessageBox.Show(this, "Для того, чтобы заказать билеты, Вам необходимо быть авторизированным в системе", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, 120);  
+            }
+            else*/
+            {
+                Ticket_purchase t = new Ticket_purchase(this, perf_info_id);
+                t.Show();
+                this.Hide();
+            }
         }
     }
 }

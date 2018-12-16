@@ -90,7 +90,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel5.Location = new System.Drawing.Point(478, 16);
+            this.metroLabel5.Location = new System.Drawing.Point(491, 16);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(88, 25);
             this.metroLabel5.TabIndex = 8;
@@ -101,18 +101,18 @@
             this.metroLabel4.AutoSize = true;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel4.Location = new System.Drawing.Point(334, 16);
+            this.metroLabel4.Location = new System.Drawing.Point(316, 16);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(138, 25);
+            this.metroLabel4.Size = new System.Drawing.Size(169, 25);
             this.metroLabel4.TabIndex = 7;
-            this.metroLabel4.Text = "Заказ билетов";
+            this.metroLabel4.Text = "Отзывы зрителей";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.Location = new System.Drawing.Point(252, 16);
+            this.metroLabel3.Location = new System.Drawing.Point(234, 16);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(76, 25);
             this.metroLabel3.TabIndex = 6;

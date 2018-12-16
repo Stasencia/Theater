@@ -14,19 +14,19 @@ namespace Project_theater
 {
     public partial class My_Account : MetroForm
     {
-        User user;
+       // User user;
 
-        public My_Account(User us)
+        public My_Account()
         {
             InitializeComponent();
-            user = us;
+           // user = us;
         }
 
         private void My_Account_Load(object sender, EventArgs e)
         {
             Fields_fill();
             personal_info_panel1.account = this;
-            personal_info_panel1.userid = user.ID;
+            personal_info_panel1.userid = User.ID;
             panel5.Visible = false;
         }
 
@@ -36,7 +36,7 @@ namespace Project_theater
             {
                 await connection.OpenAsync();
                 SqlCommand command = new SqlCommand("SELECT * FROM [Users] WHERE Id = @ID", connection);
-                command.Parameters.AddWithValue("@ID", user.ID);
+                command.Parameters.AddWithValue("@ID", User.ID);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -71,7 +71,7 @@ namespace Project_theater
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
             panel_slide((Button)sender);
-            MainForm f = new MainForm(user.ID);
+            MainForm f = new MainForm(User.ID);
             f.Show();
             this.Hide();
         }

@@ -14,7 +14,7 @@ namespace Project_theater
 {
     public partial class MainForm : MetroForm
     {
-        public User user = new User();
+        //public User user = new User();
         public MainForm()
         {
             InitializeComponent(); 
@@ -25,7 +25,7 @@ namespace Project_theater
             InitializeComponent();
             if (k>0)
             {
-                user.ID = k;
+                User.ID = k;
                 metroLabel1.Visible = false;
                 metroLabel2.Visible = false;
                 metroLabel7.Text = "Личный кабинет";
@@ -55,7 +55,7 @@ namespace Project_theater
 
         private void metroLabel3_MouseClick(object sender, MouseEventArgs e)
         {
-            Afisha form = new Afisha();
+            Afisha form = new Afisha(this);
             form.Show();
             this.Hide();
         }
@@ -67,7 +67,7 @@ namespace Project_theater
 
         private void metroLabel7_MouseClick(object sender, MouseEventArgs e)
         {
-            My_Account form = new My_Account(user);
+            My_Account form = new My_Account();
             form.Show();
             this.Hide();
         }
