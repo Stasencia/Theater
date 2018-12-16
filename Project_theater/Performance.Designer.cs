@@ -93,13 +93,13 @@
             this.label9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label9.Location = new System.Drawing.Point(11, 589);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(565, 216);
+            this.label9.Size = new System.Drawing.Size(769, 216);
             this.label9.TabIndex = 26;
             this.label9.Text = resources.GetString("label9.Text");
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(578, 570);
+            this.panel2.Location = new System.Drawing.Point(641, 474);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(35, 31);
             this.panel2.TabIndex = 27;
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(814, 788);
+            this.ClientSize = new System.Drawing.Size(831, 788);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);

@@ -14,34 +14,35 @@ namespace Project_theater
 {
     public partial class Performance : MetroForm
     {
+        public int Month_id { get; set; }
         int perf_id;
         Afisha a;
-        public Performance(int perf_id, Afisha a)
+        public Performance(int perf_id, Afisha a, int Month_id)
         {
             InitializeComponent();
             this.perf_id = perf_id;
             this.a = a;
+            this.Month_id = Month_id;
+        }
+
+        private void Button_customization()
+        {
+            DateTime d = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            while( d.DayOfWeek != DayOfWeek.Monday)
+            {
+                d = d.AddDays(-1);
+            }
+            for(int i = 0;i<42;i++)
+            {
+               Controls["b" + (i+1)].Text = d.Day.ToString();
+                if (d.Month != DateTime.Today.Month)
+                    Controls["b" + (i + 1)].Enabled = false;
+               d = d.AddDays(1);
+            }
         }
 
         private async void Performance_Load(object sender, EventArgs e)
         {
-            Button[] b = new Button[35];
-            for (int i = 0; i < 35; i++)
-            {
-                b[i] = new Button();
-                b[i].Size = new Size(90, 90);
-                b[i].Location = new Point(75 + (89 * (i % 7)), 830 + (89 * (int)Math.Floor(i / 7.0)));
-                b[i].Text = (i + 1).ToString();
-                b[i].FlatStyle = FlatStyle.Flat;
-                b[i].TextAlign = ContentAlignment.TopLeft;
-                b[i].BackgroundImageLayout = ImageLayout.Stretch;
-                b[i].MouseEnter += new EventHandler(button_MouseEnter);
-                b[i].MouseLeave += new EventHandler(button_MouseLeave);
-                Controls.Add(b[i]);
-            }
-            panel2.Size = new Size(15, 15);
-            panel2.Location = new Point(0, b[34].Bottom);
-            panel2.BringToFront();
             AutoSize = false;
             Size = new Size(797, 530);
             using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
@@ -61,6 +62,26 @@ namespace Project_theater
                     label9.Text = reader.GetValue(5).ToString();
                 }
             }
+            label9.Height = (int)(((label9.Text.Length * label9.Font.SizeInPoints) / label9.Width + label9.Text.Where(x=>x == '\n').Count()) * label9.Font.Height);
+            Button[] b = new Button[42];
+            for (int i = 0; i < 42; i++)
+            {
+                b[i] = new Button();
+                b[i].Size = new Size(90, 90);
+                b[i].Location = new Point(75 + (89 * (i % 7)), label9.Bottom + (89 * (int)Math.Floor(i / 7.0)));
+                b[i].FlatStyle = FlatStyle.Flat;
+                b[i].TextAlign = ContentAlignment.TopLeft;
+                b[i].BackgroundImageLayout = ImageLayout.Stretch;
+                b[i].MouseEnter += new EventHandler(button_MouseEnter);
+                b[i].MouseLeave += new EventHandler(button_MouseLeave);
+                b[i].Font = new Font("Century Gothic", 9, FontStyle.Regular);
+                b[i].Name = "b" + (i + 1);
+                Controls.Add(b[i]);
+            }
+            Button_customization();
+            panel2.Size = new Size(15, 15);
+            panel2.Location = new Point(0, b[41].Bottom);
+            panel2.BringToFront();
         }
         private void button_MouseLeave(object sender, EventArgs e)
         {
@@ -84,8 +105,6 @@ namespace Project_theater
         private void Performance_Activated(object sender, EventArgs e)
         {
             panel1.Size = new Size(780, 380);
-            AutoSize = false;
-            this.Size = new Size(797, 448);
         }
 
         private void Performance_Shown(object sender, EventArgs e)

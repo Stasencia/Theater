@@ -22,7 +22,7 @@ namespace Project_theater
 
         private void button_Click(object sender, EventArgs e)
         {
-            Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag), (Afisha)this.Parent.Parent);
+            Performance f = new Performance(Convert.ToInt32(((Control)sender).Tag), (Afisha)this.Parent.Parent, Month_id);
             f.Show();
             this.Parent.Parent.Hide();
         }
