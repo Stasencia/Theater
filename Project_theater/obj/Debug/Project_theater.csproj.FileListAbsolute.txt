@@ -40,7 +40,8 @@ C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Deb
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csproj.CopyComplete
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.exe
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.pdb
-C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csprojAssemblyReference.cache
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.My_account_firsttext_panel.resources
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Performance.resources
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Performance_list.resources
+C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csprojAssemblyReference.cache
+C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Ticket_purchase.resources
