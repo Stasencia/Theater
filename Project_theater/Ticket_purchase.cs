@@ -131,7 +131,7 @@ namespace Project_theater
 
                 }
                 if(k!=0)
-                  MetroMessageBox.Show(this, "Билеты были успешно заказаны!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 10);
+                    MetroMessageBox.Show(this, "Билеты были успешно заказаны!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 100);
                     
             }
         }

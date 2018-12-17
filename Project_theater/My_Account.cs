@@ -28,6 +28,7 @@ namespace Project_theater
             personal_info_panel1.account = this;
             personal_info_panel1.userid = User.ID;
             panel5.Visible = false;
+            
         }
 
         public async void Fields_fill()

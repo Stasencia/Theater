@@ -37,9 +37,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.me_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
             this.personal_info_panel1 = new Project_theater.Personal_info_panel();
             this.tickets_panel1 = new Project_theater.Tickets_panel();
-            this.me_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -160,6 +160,13 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
+            // me_account_firsttext_panel1
+            // 
+            this.me_account_firsttext_panel1.Location = new System.Drawing.Point(198, 87);
+            this.me_account_firsttext_panel1.Name = "me_account_firsttext_panel1";
+            this.me_account_firsttext_panel1.Size = new System.Drawing.Size(600, 362);
+            this.me_account_firsttext_panel1.TabIndex = 6;
+            // 
             // personal_info_panel1
             // 
             this.personal_info_panel1.account = null;
@@ -175,13 +182,6 @@
             this.tickets_panel1.Size = new System.Drawing.Size(600, 365);
             this.tickets_panel1.TabIndex = 5;
             // 
-            // me_account_firsttext_panel1
-            // 
-            this.me_account_firsttext_panel1.Location = new System.Drawing.Point(198, 87);
-            this.me_account_firsttext_panel1.Name = "me_account_firsttext_panel1";
-            this.me_account_firsttext_panel1.Size = new System.Drawing.Size(600, 362);
-            this.me_account_firsttext_panel1.TabIndex = 6;
-            // 
             // My_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,6 +194,7 @@
             this.Controls.Add(this.tickets_panel1);
             this.Name = "My_Account";
             this.Style = MetroFramework.MetroColorStyle.White;
+            this.TransparencyKey = System.Drawing.Color.Empty;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.My_Account_FormClosing);
             this.Load += new System.EventHandler(this.My_Account_Load);
             this.metroPanel1.ResumeLayout(false);

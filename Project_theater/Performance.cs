@@ -118,6 +118,7 @@ namespace Project_theater
                         top.BringToFront();
                         top.Click += new System.EventHandler(this.Button_customization);
                         top.Name = "top" + (i + 1);
+                        top.TabStop = false;
                         Controls.Add(top);
                         i++;
                     }
@@ -145,6 +146,7 @@ namespace Project_theater
                 Controls.Add(b[i]);
             }
             //push.Select();
+            push.TabStop = true;
             push.PerformClick();
             panel2.Size = new Size(15, 15);
             panel2.Location = new Point(0, b[41].Bottom);

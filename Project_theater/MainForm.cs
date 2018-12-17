@@ -35,7 +35,7 @@ namespace Project_theater
         private void MainForm_Load(object sender, EventArgs e)
         {
             metroLabel6.Text = "Театр имени \nОльги Кобылянской";
-            DB_connection.connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\DB_Theater.mdf;Integrated Security=True";
+          //  DB_connection.connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\DB_Theater.mdf;Integrated Security=True";
             DB_connection.current_directory = Environment.CurrentDirectory + "\\";
         }
 
