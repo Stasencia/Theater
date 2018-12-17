@@ -239,9 +239,10 @@
             // 
             // Tickets_panel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(10, 10);
+            this.AutoScrollMinSize = new System.Drawing.Size(10, 10);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -263,8 +264,9 @@
             this.Controls.Add(this.label1);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "Tickets_panel";
-            this.Size = new System.Drawing.Size(590, 539);
+            this.Size = new System.Drawing.Size(602, 405);
             this.Load += new System.EventHandler(this.Tickets_panel_Load);
+            this.Enter += new System.EventHandler(this.Tickets_panel_Enter);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -24,11 +24,11 @@ namespace Project_theater
 
         private void My_Account_Load(object sender, EventArgs e)
         {
+            this.Size = new Size(802, 463);
             Fields_fill();
-            personal_info_panel1.account = this;
-            personal_info_panel1.userid = User.ID;
             panel5.Visible = false;
-            
+            personal_info_panel1.account = this;
+            my_account_firsttext_panel1.BringToFront();
         }
 
         public async void Fields_fill()
@@ -43,7 +43,7 @@ namespace Project_theater
                 {
                     metroLabel1.Text = "Личный кабинет пользователя\n" + reader.GetValue(1).ToString();
                     personal_info_panel1.label3.Text = reader.GetValue(1).ToString();
-                    personal_info_panel1.label4.Text = reader.GetValue(2).ToString();
+                    personal_info_panel1.label4.Text = reader.GetValue(2).ToString(); 
                     personal_info_panel1.textBox1.Text = reader.GetValue(1).ToString();
                     personal_info_panel1.textBox2.Text = reader.GetValue(2).ToString();
                 }
@@ -58,7 +58,10 @@ namespace Project_theater
         private void button2_MouseClick(object sender, MouseEventArgs e)
         {
             panel_slide((Button)sender);
-            tickets_panel1.BringToFront();
+            //  tickets_panel1.BringToFront();
+            //  tickets_panel1.VerticalScroll.Enabled = true;
+            //  tickets_panel1.VerticalScroll.Visible = true;
+            test1.BringToFront();
         }
 
         private void panel_slide(Button b)

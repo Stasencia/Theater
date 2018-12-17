@@ -37,11 +37,13 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.me_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.personal_info_panel1 = new Project_theater.Personal_info_panel();
-            this.tickets_panel1 = new Project_theater.Tickets_panel();
+            this.my_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
+            this.test1 = new Project_theater.test();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -53,7 +55,7 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(197, 25);
+            this.metroPanel1.Location = new System.Drawing.Point(199, 36);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(602, 62);
             this.metroPanel1.TabIndex = 1;
@@ -96,9 +98,9 @@
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(-2, 25);
+            this.panel1.Location = new System.Drawing.Point(0, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 426);
+            this.panel1.Size = new System.Drawing.Size(200, 427);
             this.panel1.TabIndex = 2;
             // 
             // panel5
@@ -160,45 +162,59 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button1_MouseClick);
             // 
-            // me_account_firsttext_panel1
+            // panel2
             // 
-            this.me_account_firsttext_panel1.Location = new System.Drawing.Point(198, 87);
-            this.me_account_firsttext_panel1.Name = "me_account_firsttext_panel1";
-            this.me_account_firsttext_panel1.Size = new System.Drawing.Size(600, 362);
-            this.me_account_firsttext_panel1.TabIndex = 6;
+            this.panel2.Controls.Add(this.test1);
+            this.panel2.Controls.Add(this.personal_info_panel1);
+            this.panel2.Controls.Add(this.my_account_firsttext_panel1);
+            this.panel2.Location = new System.Drawing.Point(199, 97);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(602, 362);
+            this.panel2.TabIndex = 3;
             // 
             // personal_info_panel1
             // 
             this.personal_info_panel1.account = null;
-            this.personal_info_panel1.Location = new System.Drawing.Point(199, 87);
+            this.personal_info_panel1.Location = new System.Drawing.Point(3, 7);
             this.personal_info_panel1.Name = "personal_info_panel1";
-            this.personal_info_panel1.Size = new System.Drawing.Size(599, 362);
-            this.personal_info_panel1.TabIndex = 4;
+            this.personal_info_panel1.Size = new System.Drawing.Size(597, 352);
+            this.personal_info_panel1.TabIndex = 1;
             // 
-            // tickets_panel1
+            // my_account_firsttext_panel1
             // 
-            this.tickets_panel1.Location = new System.Drawing.Point(198, 87);
-            this.tickets_panel1.Name = "tickets_panel1";
-            this.tickets_panel1.Size = new System.Drawing.Size(600, 365);
-            this.tickets_panel1.TabIndex = 5;
+            this.my_account_firsttext_panel1.Location = new System.Drawing.Point(0, 0);
+            this.my_account_firsttext_panel1.Name = "my_account_firsttext_panel1";
+            this.my_account_firsttext_panel1.Size = new System.Drawing.Size(600, 362);
+            this.my_account_firsttext_panel1.TabIndex = 0;
+            // 
+            // test1
+            // 
+            this.test1.Location = new System.Drawing.Point(2, 7);
+            this.test1.Name = "test1";
+            this.test1.Size = new System.Drawing.Size(597, 352);
+            this.test1.TabIndex = 2;
             // 
             // My_Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 450);
-            this.Controls.Add(this.me_account_firsttext_panel1);
-            this.Controls.Add(this.personal_info_panel1);
-            this.Controls.Add(this.metroPanel1);
+            this.AutoScroll = true;
+            this.AutoScrollMinSize = new System.Drawing.Size(10, 10);
+            this.ClientSize = new System.Drawing.Size(802, 463);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.tickets_panel1);
+            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "My_Account";
+            this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.White;
             this.TransparencyKey = System.Drawing.Color.Empty;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.My_Account_FormClosing);
             this.Load += new System.EventHandler(this.My_Account_Load);
             this.metroPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -213,8 +229,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel panel2;
         private Personal_info_panel personal_info_panel1;
-        private Tickets_panel tickets_panel1;
-        private My_account_firsttext_panel me_account_firsttext_panel1;
+        private My_account_firsttext_panel my_account_firsttext_panel1;
+        private test test1;
     }
 }
