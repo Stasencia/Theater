@@ -222,9 +222,12 @@
     <None Include="Resources\opera01.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB_Theater.mdf" />
+    <Content Include="DB_Theater.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="DB_Theater_log.ldf">
       <DependentUpon>DB_Theater.mdf</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

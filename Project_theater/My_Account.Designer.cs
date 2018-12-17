@@ -38,9 +38,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.test1 = new Project_theater.test();
             this.personal_info_panel1 = new Project_theater.Personal_info_panel();
             this.my_account_firsttext_panel1 = new Project_theater.My_account_firsttext_panel();
-            this.test1 = new Project_theater.test();
             this.metroPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,9 +55,9 @@
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel1.HorizontalScrollbarSize = 10;
-            this.metroPanel1.Location = new System.Drawing.Point(199, 36);
+            this.metroPanel1.Location = new System.Drawing.Point(192, 36);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(602, 62);
+            this.metroPanel1.Size = new System.Drawing.Size(610, 62);
             this.metroPanel1.TabIndex = 1;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
@@ -68,7 +68,7 @@
             // 
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.Location = new System.Drawing.Point(161, -1);
+            this.metroLabel1.Location = new System.Drawing.Point(167, -1);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(303, 58);
             this.metroLabel1.TabIndex = 4;
@@ -172,6 +172,14 @@
             this.panel2.Size = new System.Drawing.Size(602, 362);
             this.panel2.TabIndex = 3;
             // 
+            // test1
+            // 
+            this.test1.AutoScroll = true;
+            this.test1.Location = new System.Drawing.Point(2, 7);
+            this.test1.Name = "test1";
+            this.test1.Size = new System.Drawing.Size(597, 352);
+            this.test1.TabIndex = 2;
+            // 
             // personal_info_panel1
             // 
             this.personal_info_panel1.account = null;
@@ -186,13 +194,6 @@
             this.my_account_firsttext_panel1.Name = "my_account_firsttext_panel1";
             this.my_account_firsttext_panel1.Size = new System.Drawing.Size(600, 362);
             this.my_account_firsttext_panel1.TabIndex = 0;
-            // 
-            // test1
-            // 
-            this.test1.Location = new System.Drawing.Point(2, 7);
-            this.test1.Name = "test1";
-            this.test1.Size = new System.Drawing.Size(597, 352);
-            this.test1.TabIndex = 2;
             // 
             // My_Account
             // 

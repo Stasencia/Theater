@@ -24,7 +24,7 @@ namespace Project_theater
 
         private void Registration_FormClosing(object sender, FormClosingEventArgs e)
         {
-            MainForm f = new MainForm(ID);
+            MainForm f = new MainForm(ID+1);
             f.Show();
             this.Hide();
         }
@@ -46,29 +46,33 @@ namespace Project_theater
                     SqlDataReader reader = await selection_com.ExecuteReaderAsync();
                     if (reader.HasRows)
                     {
-                        while (await reader.ReadAsync())
+                        while (reader.Read())
                         {
+                            ID = int.Parse(reader.GetValue(0).ToString());
                             if (reader.GetValue(1).ToString() == metroTextBox1.Text)
                             {
-                                ID--;
+                                ID = 0;
                                 break;
                             }
                         }
-                    }
+                    }  
                     reader.Close();
-
-                    if (ID == 0)
+                }
+                using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
+                {
+                    await connection.OpenAsync();
+                    if (ID != 0)
                     {
                         SqlCommand command = new SqlCommand("INSERT INTO [Users] (Login, Password) VALUES(@Login, @Password)", connection);
                         command.Parameters.AddWithValue("Login", metroTextBox1.Text);
                         command.Parameters.AddWithValue("Password", metroTextBox2.Text);
                         await command.ExecuteNonQueryAsync();
-                        MetroMessageBox.Show(this, "Вы были успешно зарегистрированы!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 120);
-                        ID = int.Parse(reader.GetValue(0).ToString());
+                        MetroMessageBox.Show(this, "Вы были успешно зарегистрированы!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 120);  
                     }
                     else
                         MetroMessageBox.Show(this, "Данный логин уже занят", "Значение логина", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, 120);
                 }
+                
             }
             else
                 MetroMessageBox.Show(this, "Заполните все необходимые поля", "Ошибка заполнения", MessageBoxButtons.OK, MessageBoxIcon.Error, 120);   

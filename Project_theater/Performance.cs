@@ -219,11 +219,11 @@ namespace Project_theater
 
         private void Day_pushed(object sender, EventArgs e)
         {
-          /*  if (User.ID == 0) 
+            if (User.ID == 0) 
             {
                 MetroMessageBox.Show(this, "Для того, чтобы заказать билеты, Вам необходимо быть авторизированным в системе", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, 120);  
             }
-            else*/
+            else
             {
                 Ticket_purchase t = new Ticket_purchase(this, perf_info_id);
                 t.Show();
