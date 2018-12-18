@@ -30,8 +30,6 @@ namespace Project_theater
 
         private async void Editing_Load(object sender, EventArgs e)
         {
-            dateTimePicker1.CustomFormat = "HH:mm"; 
-            dateTimePicker1.ShowUpDown = true; 
             using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
             {
                 await connection.OpenAsync();
@@ -127,6 +125,7 @@ namespace Project_theater
                 dateTimePicker.Font = new Font("Century Gothic", 10, FontStyle.Regular);
                 dateTimePicker.Size = new Size(62,23);
                 dateTimePicker.Name = "dateTimePicker";
+                dateTimePicker.MinDate = new DateTime();
                 b[i].Controls.Add(dateTimePicker);
                 dateTimePicker.Dock = DockStyle.Bottom;
                 Controls.Add(b[i]);
@@ -145,8 +144,6 @@ namespace Project_theater
             button.Click += new System.EventHandler(this.Write_Changes);
             button.Name = "btn";
             Controls.Add(button);
-
-            dateTimePicker1.Location = new Point(((Button)Controls["b21"]).Right + 20, ((Button)Controls["b21"]).Location.Y);
             foreach (Control c in Controls)
             {
                 c.Visible = true;
@@ -168,10 +165,12 @@ namespace Project_theater
                     {
                         string s = DB_connection.current_directory + "images_afisha\\" + reader.GetValue(11).ToString();
                         ((Button)sender).BackgroundImage = new Bitmap(@s);
+                        ((Button)sender).Controls["dateTimePicker"].Visible = true;
                     }
                     else
                     {
                         ((Button)sender).BackgroundImage = null;
+                        ((Button)sender).Controls["dateTimePicker"].Visible = false;
                     }
                 }
             }
@@ -206,7 +205,7 @@ namespace Project_theater
             using (SqlConnection connection = new SqlConnection(DB_connection.connectionString))
             {
                 await connection.OpenAsync();
-                SqlCommand command = new SqlCommand("SELECT Id_performance, Date, DAY(Date) AS day, Afisha.Small_image FROM [Afisha_dates] LEFT JOIN[Afisha] ON Afisha_dates.Id_performance = Afisha.Id WHERE Id_performance = @Id AND MONTH(Date) = @month AND YEAR(Date) = @year", connection);
+                SqlCommand command = new SqlCommand("SELECT Id_performance, Date, DAY(Date) AS day, Afisha.Small_image, Afisha_dates.Time FROM [Afisha_dates] LEFT JOIN[Afisha] ON Afisha_dates.Id_performance = Afisha.Id WHERE Id_performance = @Id AND MONTH(Date) = @month AND YEAR(Date) = @year", connection);
                 command.Parameters.AddWithValue("@Id", perf_id);
                 command.Parameters.AddWithValue("@month", Convert.ToInt32(words[0]));
                 command.Parameters.AddWithValue("@year", Convert.ToInt32(words[1]));
@@ -224,6 +223,13 @@ namespace Project_theater
                                // Controls["b" + (i + 1)].Enabled = true;
                                 Controls["b" + (i + 1)].BackgroundImage = new Bitmap(@s);
                                 Controls["b" + (i + 1)].Controls["dateTimePicker"].Visible = true;
+                                string st = reader.GetValue(1).ToString().Split(' ')[0] + " " + reader.GetValue(4).ToString();
+                                ((DateTimePicker)Controls["b" + (i + 1)].Controls["dateTimePicker"]).Value = DateTime.Parse(st);
+                            }
+                            else
+                            {
+                                ((DateTimePicker)Controls["b" + (i + 1)].Controls["dateTimePicker"]).Value = ((DateTimePicker)Controls["b" + (i + 1)].Controls["dateTimePicker"]).MinDate;
+                            
                             }
                         }
                     }
