@@ -37,6 +37,12 @@ namespace Project_theater
             metroLabel6.Text = "Театр имени \nОльги Кобылянской";
             DB_connection.connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\DB_Theater.mdf;Integrated Security=True";
             DB_connection.current_directory = Environment.CurrentDirectory + "\\";
+            if(User.Right == 1)
+            {
+                label1.Text = "Редактирование афиши";
+                label1.AutoSize = true;
+                label1.Location = new Point(label1.Location.X-110,label1.Location.Y);
+            }
         }
 
         private void metroLabel1_MouseClick(object sender, MouseEventArgs e)
@@ -55,9 +61,7 @@ namespace Project_theater
 
         private void metroLabel3_MouseClick(object sender, MouseEventArgs e)
         {
-            Afisha form = new Afisha(this);
-            form.Show();
-            this.Hide();
+           
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -69,6 +73,21 @@ namespace Project_theater
         {
             My_Account form = new My_Account();
             form.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            if (User.Right == 1)
+            {
+                Editing form = new Editing(this);
+                form.Show();
+            }
+            else
+            {
+                Afisha form = new Afisha(this);
+                form.Show();
+            }
             this.Hide();
         }
     }

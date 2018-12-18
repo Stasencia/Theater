@@ -46,3 +46,4 @@ C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Deb
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Debug\DB_Theater.mdf
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\bin\Debug\DB_Theater_log.ldf
 C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.csprojAssemblyReference.cache
+C:\Users\Stasia\Desktop\uni_2018\Project_theater\Theater\Project_theater\obj\Debug\Project_theater.Editing.resources

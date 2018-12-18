@@ -48,15 +48,17 @@ namespace Project_theater
                             }
                         }
                     }
-                    reader.Close();
 
                     if (ID != 0)
                     {
                         MetroMessageBox.Show(this, "Добро пожаловать!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk, 120);;
+                        User.Right = Convert.ToInt32(reader.GetValue(0));
                         Close();
                     }
                     else
                         MetroMessageBox.Show(this, "Пользователя с таким логином и паролем нет в базе данных", "Ошибка авторизации", MessageBoxButtons.OK, MessageBoxIcon.Error, 150);
+
+                    reader.Close();
                 }
             }
             else

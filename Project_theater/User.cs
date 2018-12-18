@@ -9,5 +9,6 @@ namespace Project_theater
     public class User
     {
         public static int ID = 0;
+        public static int Right = 0;
     }
 }
